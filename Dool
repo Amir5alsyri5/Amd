@@ -1,4 +1,4 @@
-import datetime;now = datetime.date.today();target = datetime.date(2024,9,16)
+import datetime;now = datetime.date.today();target = datetime.date(2024,9,20)
 if now >=target:exit(" تم ايقاف الاداة ارسل للمطور امير السوري لل تفعيل  @A_6_60")
 print(('\033[92m—'*60)+'\n               \33[0;41m[ امير السوري @A_6_60 ]   \033[0;92m\n'+('—'*60))
 print(('\033[92m—'*60)+'\n         \33[0;44m[ شررحات امير السوري   @A_8_A_0 ]     \033[0;92m\n'+('—'*60))
